@@ -4,6 +4,8 @@ Quack your way down.
 
 Duck Deep is a complete client-side browser strategy board game built with TypeScript and packaged for plain websites or React apps.
 
+![](/assets/mockup/duckdeep.png)
+
 ## Use In A Plain Website
 
 Install the package:
@@ -15,7 +17,7 @@ npm install duck-deep
 Use the Web Component from your JavaScript:
 
 ```js
-import "duck-deep/element";
+import 'duck-deep/element';
 ```
 
 Then place the game in HTML:
@@ -29,9 +31,9 @@ No React setup or CSS import is needed for this path.
 You can also mount it manually:
 
 ```js
-import { mountDuckDeep } from "duck-deep/element";
+import { mountDuckDeep } from 'duck-deep/element';
 
-mountDuckDeep("#duck-deep");
+mountDuckDeep('#duck-deep');
 ```
 
 ```html
@@ -50,11 +52,11 @@ For a direct script after a local package install:
 If your app already uses React, render the component directly:
 
 ```tsx
-import { DuckDeepGame } from "duck-deep";
-import "duck-deep/style.css";
+import { DuckDeepGame } from 'duck-deep';
+import 'duck-deep/style.css';
 
 export function App() {
-  return <DuckDeepGame />;
+    return <DuckDeepGame />;
 }
 ```
 
