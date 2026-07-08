@@ -4,7 +4,7 @@ Quack your way down.
 
 Duck Deep is a complete client-side browser strategy board game built with TypeScript and packaged for plain websites or React apps.
 
-![](/assets/mockup/duckdeep.pngg)
+![](/assets/mockup/duckdeep.png)
 
 ## Use In A Plain Website
 
