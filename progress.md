@@ -61,3 +61,5 @@ Original prompt: Build a complete browser-based strategy board game called "Duck
 - No known blockers.
 - Future polish idea: tune duck piece scale on very narrow screens if the board should feel less crowded.
 - Publishing note: the library bundles intentionally embed the PNG/SVG assets for simple npm consumption. The package tarball is now about 10 MB because it includes both the React-component entry and the standalone Web Component entry.
+- Balance pass requested by the user: redesigned all playable SVG maps so every hole is a one-entrance dead end, and disallowed revisiting a node within one exact-N move to prevent spending steps by bouncing back and forth.
+- Balance verification: 12/12 Vitest tests pass, app and npm-library builds pass, screenshots show the revised paths correctly, a real browser turn completed without console errors, and an automated full game reached the Rare Pearl normally after crossing all four playable zones.

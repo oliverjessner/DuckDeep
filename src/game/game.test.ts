@@ -94,6 +94,13 @@ describe("movement", () => {
     expect(validateMovePath(state, "H1", ["n0_0", "n5_6", "n0_0"])).toBe(false);
   });
 
+  it("does not allow revisiting a node to spend extra movement", () => {
+    const state = { ...stateWithDuckAt("n0_0"), currentMoveValue: 2 as const };
+    const paths = getLegalPathsForDuck(state, "H1", 2);
+    expect(paths.some((path) => path.join(">") === "n0_0>n1_0>n0_0")).toBe(false);
+    expect(validateMovePath(state, "H1", ["n0_0", "n1_0", "n0_0"])).toBe(false);
+  });
+
   it("blocks occupied normal destinations and occupied holes", () => {
     const normalBlocked = stateWithDuckAt("n0_0", ["n1_0"]);
     expect(getLegalPathsForDuck(normalBlocked, "H1", 1).some((path) => path[path.length - 1] === "n1_0")).toBe(false);
@@ -135,6 +142,15 @@ describe("zones and endings", () => {
     expect(BOARD_GRAPHS.shallow.holes).toHaveLength(3);
     expect(BOARD_GRAPHS.deep.holes).toHaveLength(1);
     expect(BOARD_GRAPHS.pearl.goal).toBe("n3_6");
+  });
+
+  it("makes every playable hole a single-entry dead end", () => {
+    for (const zone of ["surface", "reeds", "shallow", "deep"] as const) {
+      const graph = BOARD_GRAPHS[zone];
+      for (const hole of graph.holes) {
+        expect(graph.adjacency[hole], `${zone}:${hole}`).toHaveLength(1);
+      }
+    }
   });
 
   it("completes a zone only after every hole is occupied", () => {

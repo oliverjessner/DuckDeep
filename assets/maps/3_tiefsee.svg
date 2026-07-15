@@ -265,7 +265,6 @@
 <line x1="805" y1="380" x2="750" y2="505" data-from="n2_4" data-to="n3_4"/>
 <line x1="805" y1="380" x2="900" y2="460" data-from="n2_4" data-to="n3_5"/>
 <line x1="965" y1="355" x2="900" y2="460" data-from="n2_5" data-to="n3_5"/>
-<line x1="965" y1="355" x2="1050" y2="500" data-from="n2_5" data-to="n3_6"/>
 <line x1="115" y1="495" x2="275" y2="470" data-from="n3_0" data-to="n3_1"/>
 <line x1="275" y1="470" x2="430" y2="515" data-from="n3_1" data-to="n3_2"/>
 <line x1="275" y1="470" x2="330" y2="590" data-from="n3_1" data-to="n4_1"/>
@@ -276,7 +275,6 @@
 <line x1="750" y1="505" x2="900" y2="460" data-from="n3_4" data-to="n3_5"/>
 <line x1="750" y1="505" x2="655" y2="585" data-from="n3_4" data-to="n4_3"/>
 <line x1="750" y1="505" x2="820" y2="625" data-from="n3_4" data-to="n4_4"/>
-<line x1="900" y1="460" x2="1050" y2="500" data-from="n3_5" data-to="n3_6"/>
 <line x1="1050" y1="500" x2="980" y2="590" data-from="n3_6" data-to="n4_5"/>
 <line x1="175" y1="615" x2="330" y2="590" data-from="n4_0" data-to="n4_1"/>
 <line x1="175" y1="615" x2="120" y2="735" data-from="n4_0" data-to="n5_0"/>

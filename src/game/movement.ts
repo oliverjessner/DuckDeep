@@ -75,6 +75,7 @@ export function getLegalPathsForDuck(
     const nextStepIndex = path.length;
     const isFinalStep = nextStepIndex === steps;
     for (const next of graph.adjacency[current] ?? []) {
+      if (path.includes(next)) continue;
       if (!canEnterNode(graph, state, next, isFinalStep, duckId)) continue;
       walk([...path, next]);
     }
@@ -90,6 +91,7 @@ export function validateMovePath(state: GameState, duckId: string, path: string[
   const graph = BOARD_GRAPHS[state.zone];
   const duck = state.ducks.find((candidate) => candidate.id === duckId);
   if (!duck || duck.status !== "active" || duck.nodeId !== path[0]) return false;
+  if (new Set(path).size !== path.length) return false;
   for (let i = 1; i < path.length; i += 1) {
     const from = path[i - 1];
     const to = path[i];
